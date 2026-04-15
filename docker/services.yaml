@@ -5,7 +5,7 @@ services:
   gradio:
     build:
       context: ..
-      dockerfile: docker/Dockefile
+      dockerfile: docker/Dockerfile
     working_dir: /app
     command: python3 main.py
     restart: always
