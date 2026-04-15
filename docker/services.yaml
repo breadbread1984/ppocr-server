@@ -9,6 +9,8 @@ services:
     working_dir: /app
     command: python3 main.py
     restart: always
+    ports:
+      - "8081:8081"
   minio:
     image: minio/minio
     environment:
