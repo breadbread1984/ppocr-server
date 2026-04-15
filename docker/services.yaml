@@ -1,0 +1,22 @@
+version: '3'
+
+name: ppocr
+services:
+  gradio:
+    build:
+      context: ..
+      dockerfile: docker/Dockefile
+    working_dir: /app
+    command: python3 main.py
+    restart: always
+  minio:
+    image: minio/minio
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./minio_data:/data

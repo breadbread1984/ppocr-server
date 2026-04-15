@@ -1,0 +1,11 @@
+[project]
+name = "ppocr"
+version = "3.0.0"
+description = "paddleocr serving"
+authors = []
+requires-python = "==3.12"
+
+dependencies = [
+  "paddleocr[all]==3.4.0",
+  "paddlex==3.4.3"
+]
