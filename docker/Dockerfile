@@ -29,5 +29,5 @@ RUN python3.12 -m uv sync --index-url https://mirrors.aliyun.com/pypi/simple/
 
 RUN wget https://paddle-whl.bj.bcebos.com/stable/cu128/paddlepaddle-gpu/paddlepaddle-3.2.0-cp312-cp312-linux_x86_64.whl
 
-RUN python3.12 -m uv pip install paddlepaddle-3.2.0-cp312-cp312-linux_x86_64.whl
+RUN python3.12 -m uv pip install paddlepaddle-3.2.0-cp312-cp312-linux_x86_64.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
 
