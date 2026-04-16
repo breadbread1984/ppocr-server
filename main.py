@@ -17,7 +17,7 @@ def add_options():
 
 def create_interface():
   ocr = OCR()
-  minio_client = MinioClint(configs)
+  minio_client = MinioClient(configs)
   def process_ocr(file_input):
     session_id = str(uuid4())
     output_dir = join('/', 'tmp', session_id)
