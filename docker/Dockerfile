@@ -15,7 +15,7 @@ COPY . .
 
 RUN rm -rf .venv
 
-RUN uv sunc
+RUN PATH=/root/.local/bin:$PATH uv sunc
 
-RUN PATH=/root/.local/bin::$PATH uv pip install paddlepaddle-gpu==3.2.2 -i https://www.paddlepaddle.org.cn/packages/stable/cu130/
+RUN PATH=/root/.local/bin:$PATH uv pip install paddlepaddle-gpu==3.2.2 -i https://www.paddlepaddle.org.cn/packages/stable/cu130/
 
