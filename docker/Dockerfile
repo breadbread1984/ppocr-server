@@ -6,7 +6,7 @@ ENV TZ=Asia/Shanghai
 RUN sed -i "s://archive.ubuntu.com://mirrors.aliyun.com:g" /etc/apt/sources.list
 RUN sed -i "s://security.ubuntu.com://mirrors.aliyun.com:g" /etc/apt/sources.list
 
-RUN apt update && apt install -y software-properties-common
+RUN apt update && apt install -y software-properties-common libgl1
 
 RUN add-apt-repository ppa:deadsnakes/ppa -y
 
@@ -27,4 +27,3 @@ RUN rm -rf .venv
 
 RUN python3.12 -m uv sync --index-url https://mirrors.aliyun.com/pypi/simple/
 
-RUN apt install libgl1
