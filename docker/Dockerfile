@@ -20,7 +20,7 @@ COPY . .
 
 RUN rm -rf .venv
 
-RUN uv sync
+RUN uv sync --index-url https://mirrors.aliyun.com/pypi/simple/
 
 RUN uv pip install paddlepaddle-gpu==3.2.2 -i https://www.paddlepaddle.org.cn/packages/stable/cu130/
 
