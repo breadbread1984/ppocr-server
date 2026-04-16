@@ -25,14 +25,14 @@ def create_interface():
     minio_client.upload(session_id, join(output_dir, 'result.md'))
     for img in listdir(join(output_dir, 'imgs')):
       minio_client.upload(session_id, join(output_dir, 'imgs', f), join('imgs', f))
-    return f"http://{configs.minio_host}/{session_id}"
+    return session_id
 
   with gr.Blocks() as demo:
     with gr.Column():
       file_input = gr.File(label = "file upload", file_types = [".pdf"])
       submit_btn = gr.Button("submit")
-      download_path = gr.Textbox(label = "minio path", interactive = False)
-    submit_btn.click(process_ocr, inputs = [file_input], outputs = [download_path], concurrency_limit = 64)
+      bucket_name = gr.Textbox(label = "bucket name", interactive = False)
+    submit_btn.click(process_ocr, inputs = [file_input], outputs = [bucket_name], concurrency_limit = 64)
 
 def main(unused_argv):
   demo = create_interface()
