@@ -18,6 +18,8 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+    depends_on:
+      - minio
   minio:
     image: minio/minio
     environment:
@@ -29,3 +31,8 @@ services:
       - "9001:9001"
     volumes:
       - ./minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
