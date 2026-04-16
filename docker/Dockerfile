@@ -8,7 +8,7 @@ RUN apt update
 RUN apt install -y curl
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | \
-    UV_INSTALL_DIR=/usr/local sh && \
+    UV_INSTALL_DIR=/usr/local/bin sh && \
     ls -la /usr/local/bin/uv && \
     /usr/local/bin/uv --version
 
