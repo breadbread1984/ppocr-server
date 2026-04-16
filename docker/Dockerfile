@@ -15,5 +15,5 @@ RUN rm -rf .venv
 
 RUN python3 -m uv sync --index-url https://mirrors.aliyun.com/pypi/simple/
 
-RUN python3 -m uv pip install paddlepaddle-gpu==3.2.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu128/
+RUN python3 -m uv pip install paddlepaddle==3.2.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu128/
 
