@@ -23,7 +23,7 @@ def create_interface():
     output_dir = join('/', 'tmp', session_id)
     result = ocr.process(file_input, output_dir)
     if result is False:
-      return "OCR failed"
+      return "failed"
     minio_client.create_bucket(session_id)
     minio_client.upload(session_id, join(output_dir, 'result.md'))
     for img in listdir(join(output_dir, 'imgs')):
