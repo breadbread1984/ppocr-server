@@ -3,7 +3,8 @@
 from absl import app, flags
 import gradio as gr
 from uuid import uuid4
-from os.path import join, listdir
+from os import listdir
+from os.path import join
 from ocr import OCR
 from minio_client import MinioClient
 import configs
