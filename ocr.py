@@ -19,7 +19,6 @@ class OCR(object):
         "--save_path",
         output_dir,
       ],
-      env = env,
       cwd = "/app",
       stdout = subprocess.PIPE,
       stderr = subprocess.STDOUT,
