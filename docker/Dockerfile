@@ -7,7 +7,10 @@ RUN apt update
 
 RUN apt install -y curl
 
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+RUN curl -LsSf https://astral.sh/uv/install.sh | \
+    UV_INSTALL_DIR=/usr/local sh && \
+    ls -la /usr/local/bin/uv && \
+    /usr/local/bin/uv --version
 
 ENV PATH="/root/.local/bin:${PATH}"
 
