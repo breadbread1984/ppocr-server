@@ -9,7 +9,6 @@ dependencies = [
   "absl-py",
   "gradio",
   "minio",
-  "paddlepaddle-gpu==3.2.2 @ https://paddle-whl.bj.bcebos.com/stable/cu130/paddlepaddle-gpu/paddlepaddle_gpu-3.2.2-cp312-cp312-linux_x86_64.whl",
   "paddleocr[all]==3.4.0",
   "paddlex==3.4.3"
 ]
