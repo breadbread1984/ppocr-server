@@ -3,7 +3,13 @@ FROM nvidia/cuda:12.8.0-cudnn-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Shanghai
 
-RUN apt update && apt install python3 python3-pip wget -y
+RUN apt update && apt install -y software-properties-common
+
+RUN add-apt-repository ppa:deadsnakes/ppa -y
+
+RUN apt install python3.12 python3.12-venv python3.12-dev wget -y
+
+RUN python3.12 -m ensurepip --upgrade
 
 RUN python3 -m pip install uv -i https://pypi.tuna.tsinghua.edu.cn/simple
 
