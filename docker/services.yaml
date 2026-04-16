@@ -7,7 +7,7 @@ services:
       context: ..
       dockerfile: docker/Dockerfile
     working_dir: /app
-    command: python3 main.py
+    command: uv run python3 main.py
     restart: always
     ports:
       - "8081:8081"
