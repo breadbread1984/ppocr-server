@@ -34,6 +34,7 @@ def create_interface():
       submit_btn = gr.Button("submit")
       bucket_name = gr.Textbox(label = "bucket name", interactive = False)
     submit_btn.click(process_ocr, inputs = [file_input], outputs = [bucket_name], concurrency_limit = 64)
+  return demo
 
 def main(unused_argv):
   demo = create_interface()
