@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 
-from os import environ
 import subprocess
 
 class OCR(object):
   def __init__(self,):
     pass
   def process(self, pdf_path, output_dir):
-    env['PATH'] = "/usr/local/bin:/usr/bin:/bin:/root/.local/bin"
     proc = subprocess.Popen(
       [
+        "python3.12",
+        "-m"
         "uv",
         "run",
         "paddleocr",
