@@ -40,8 +40,6 @@ def main(unused_argv):
   demo = create_interface()
   demo.launch(server_name = FLAGS.host,
               server_port = FLAGS.port,
-              shared = True,
-              show_error = True,
               max_threads = 64)
 
 if __name__ == "__main__":
