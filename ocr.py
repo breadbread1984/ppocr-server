@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 import subprocess
+import re
+from os import listdir, remove
+from os.path import join, isdir, exists, splitext
 
 class OCR(object):
   def __init__(self,):
